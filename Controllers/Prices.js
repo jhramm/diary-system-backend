@@ -16,6 +16,16 @@ const addPrices = (req, res) => {
   }
 };
 
+const getPrices = async(req, res) => {
+    try {
+        const allPrices = await Prices.find();
+        res.status(200).send(allPrices);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
+
 module.exports = {
   addPrices,
+  getPrices,
 };
