@@ -8,6 +8,7 @@ const PRICES = require("./Prices/");
 const POSTCODES = require("./Postcodes/");
 const TESTCENTRES = require("./TestCentres");
 const CLIENTINVOICES = require("./ClientInvoices");
+const INSTRUCTORINVOICES = require("./InstructorInvoices");
 const app = express();
 
 app.get("/", (req, res) => {
@@ -22,6 +23,7 @@ app.use("/pupil", PUPIL);
 app.use("/prices", PRICES);
 app.use("/postcodes", POSTCODES);
 app.use("/testcentres", TESTCENTRES);
-app.use("/clientinvoices");
+app.use("/clientinvoices", CLIENTINVOICES);
+app.use("/instructorInvoices", INSTRUCTORINVOICES);
 
 module.exports = app;
