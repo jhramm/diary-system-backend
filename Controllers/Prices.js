@@ -16,7 +16,7 @@ const addPrices = (req, res) => {
   }
 };
 
-const getPrices = async(req, res) => {
+const getPrices = async (req, res) => {
     try {
         const allPrices = await Prices.find();
         res.status(200).send(allPrices);
