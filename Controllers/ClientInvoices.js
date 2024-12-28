@@ -25,7 +25,44 @@ const getClientInvoice = async (req, res) => {
   }
 };
 
+const getClientById = async (req, res) => {
+  try {
+    const clientById = await ClientInvoice.findById(req.params.id);
+    res.status(200).send(clientById);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
+const updateClientInvoice = async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const updatedClientInvoice = await ClientInvoice.findByIdAndUpdate(
+      _id,
+      req.body,
+      { new: true }
+    );
+    res.status(200).send(updatedClientInvoice);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
+
+const deleteClientInvoice = async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const deletedClientInvoice = await ClientInvoice.findByIdAndDelete({
+      _id: _id,
+    });
+    res.status(200).send(deletedClientInvoice);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};
 module.exports = {
-    addClientInvoice,
-    getClientInvoice,
-}
+  addClientInvoice,
+  getClientInvoice,
+  getClientById,
+  updateClientInvoice,
+  deleteClientInvoice,
+};
