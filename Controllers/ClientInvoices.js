@@ -25,10 +25,10 @@ const getClientInvoice = async (req, res) => {
   }
 };
 
-const getClientById = async (req, res) => {
+const getClientInvoiceById = async (req, res) => {
   try {
-    const clientById = await ClientInvoice.findById(req.params.id);
-    res.status(200).send(clientById);
+    const clientInvoiceById = await ClientInvoice.findById(req.params.id);
+    res.status(200).send(clientInvoiceById);
   } catch (error) {
     res.status(500).send(error);
   }
@@ -62,7 +62,7 @@ const deleteClientInvoice = async (req, res) => {
 module.exports = {
   addClientInvoice,
   getClientInvoice,
-  getClientById,
+  getClientInvoiceById,
   updateClientInvoice,
   deleteClientInvoice,
 };
