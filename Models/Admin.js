@@ -32,6 +32,18 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  clientIds: {
+    type: [String]
+  },
+  operatorIds: {
+    type: [String]
+  },
+  instructorIds: {
+    type: [String]
+  },
+  pupilIds: {
+    type: [String]
+  }
 });
 
 adminSchema.pre("save", async function (next) {

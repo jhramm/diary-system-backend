@@ -47,6 +47,15 @@ const operatorSchema = new mongoose.Schema({
   receiveBookingSms: {
     type: Boolean,
   },
+  clientIds: {
+    type: [String]
+  },
+  instructorIds: {
+    type: [String]
+  },
+  pupilIds: {
+    type: [String]
+  }
 });
 
 operatorSchema.pre("save", async function (next) {

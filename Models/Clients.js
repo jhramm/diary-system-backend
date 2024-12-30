@@ -67,6 +67,9 @@ const clientSchema = new mongoose.Schema({
   },
   instructorIds: {
     type: [String]
+  },
+  pupilIds: {
+    type: [String]
   }
 });
 
