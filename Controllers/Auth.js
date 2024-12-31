@@ -12,7 +12,7 @@ const loginController = async (req, res) => {
     if (accountType === "pupil") {
       const pupil = await Pupils.findOne({ username: username });
       if (pupil) {
-        const matchPassword = bcrypt.compare(password, pupil.password);
+        const matchPassword = await bcrypt.compare(password, pupil.password);
         if (matchPassword) {
           return res.status(200).send({ message: "Logged in successfully" });
         } else {
@@ -24,7 +24,7 @@ const loginController = async (req, res) => {
     } else if (accountType === "instructor") {
       const instructor = await Instructors.findOne({ username: username });
       if (instructor) {
-        const matchPassword = bcrypt.compare(password, instructor.password);
+        const matchPassword = await bcrypt.compare(password, instructor.password);
         if (matchPassword) {
           return res.status(200).send({ message: "Logged in successfully" });
         } else {
@@ -36,7 +36,7 @@ const loginController = async (req, res) => {
     } else if (accountType === "client") {
       const client = await Clients.findOne({ username: username });
       if (client) {
-        const matchPassword = bcrypt.compare(password, client.password);
+        const matchPassword = await bcrypt.compare(password, client.password);
         if (matchPassword) {
           return res.status(200).send({ message: "Logged in successfully" });
         } else {
@@ -48,7 +48,7 @@ const loginController = async (req, res) => {
     } else if (accountType === "operator") {
       const operator = await Operators.findOne({ username: username });
       if (operator) {
-        const matchPassword = bcrypt.compare(password, operator.password);
+        const matchPassword = await bcrypt.compare(password, operator.password);
         if (matchPassword) {
           return res.status(200).send({ message: "Logged in successfully" });
         } else {
