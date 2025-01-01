@@ -10,6 +10,7 @@ const TESTCENTRES = require("./TestCentres");
 const CLIENTINVOICES = require("./ClientInvoices");
 const INSTRUCTORINVOICES = require("./InstructorInvoices");
 const AUTH = require("./Auth");
+const TRANSACTION = require("./Transactions");
 const app = express();
 
 app.get("/", (req, res) => {
@@ -27,5 +28,6 @@ app.use("/testcentres", TESTCENTRES);
 app.use("/clientinvoices", CLIENTINVOICES);
 app.use("/instructorInvoices", INSTRUCTORINVOICES);
 app.use("/auth", AUTH);
+app.use("/transactions", TRANSACTIONS);
 
 module.exports = app;
