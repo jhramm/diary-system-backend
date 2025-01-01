@@ -10,7 +10,7 @@ const transactionSchema = new mongoose.Schema({
         default: Date.now
     },
     type: {
-        type: [String], 
+        type: String, 
     },
     pupil: {
         type: String,
@@ -20,7 +20,7 @@ const transactionSchema = new mongoose.Schema({
         required: true,
     },
     paymentMethod: {
-        type:[ String],
+        type: String,
     },
     amount: {
         type: Number,
