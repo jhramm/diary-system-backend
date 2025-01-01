@@ -10,7 +10,7 @@ const TESTCENTRES = require("./TestCentres");
 const CLIENTINVOICES = require("./ClientInvoices");
 const INSTRUCTORINVOICES = require("./InstructorInvoices");
 const AUTH = require("./Auth");
-const TRANSACTION = require("./Transactions");
+const TRANSACTIONS = require("./Transactions");
 const app = express();
 
 app.get("/", (req, res) => {
