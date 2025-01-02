@@ -36,8 +36,8 @@ const getPostcodeById = async (req, res) => {
 
 const updatePostcode = async (req, res) => {
   try {
-    const _id = req.params.id;
-    const updatedPostcode = await Postcodes.findByIdAndUpdate(_id, req.body, {
+    const id = req.params.id;
+    const updatedPostcode = await Postcodes.findByIdAndUpdate(id, req.body, {
       new: true,
     });
     res.status(200).send(updatedPostcode);
@@ -48,8 +48,8 @@ const updatePostcode = async (req, res) => {
 
 const deletePostcode = async (req, res) => {
   try {
-    const _id = req.params.id;
-    const deletedPostcode = await Postcodes.findByIdAndDelete({ _id: _id });
+    const id = req.params.id;
+    const deletedPostcode = await Postcodes.findByIdAndDelete({ id: id });
     res.status(200).send(deletedPostcode);
   } catch (error) {
     res.status(500).send(error);

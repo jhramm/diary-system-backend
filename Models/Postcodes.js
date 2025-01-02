@@ -20,7 +20,15 @@ const postcodeSchema = new mongoose.Schema({
     status: {
         type: Boolean,
         default: true
-    }
+    },
+    created_at: {
+        type: Date,
+        default: Date.now,
+    },
+    updated_at: {
+        type: Date,
+    },
+
 });
 
 const Postcodes = new mongoose.model('Postcodes', postcodeSchema);
