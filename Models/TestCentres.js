@@ -14,7 +14,7 @@ const testCentresSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    postcodes: {
+    postcode: {
         type: String,
         required: true
     },
