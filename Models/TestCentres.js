@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const testCentresSchema = new mongoose.Schema({
+    id: {
+        type: String,
+        required: true,
+        unique: true
+    },
     centreName: {
         type: String,
         required: true
