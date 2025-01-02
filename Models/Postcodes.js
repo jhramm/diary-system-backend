@@ -6,7 +6,7 @@ const postcodeSchema = new mongoose.Schema({
     id : {
         type: Number,
         required: true,
-        unique: true
+        unique: true,
     },
     areaName: {
         type: String,

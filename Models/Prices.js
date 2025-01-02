@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const pricesSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
   productName: {
     type: String,
     required: true,
@@ -15,9 +20,11 @@ const pricesSchema = new mongoose.Schema({
   },
   active: {
     type: Boolean,
+    default: true,
   },
   visibleOnline: {
     type: Boolean,
+    default: true,
   },
   manualPrice: {
     type: Number,

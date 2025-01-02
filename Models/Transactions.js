@@ -2,8 +2,15 @@ const mongoose = require('mongoose');
 
 
 const transactionSchema = new mongoose.Schema({
+    id: {
+        type: Number,
+        required: true,
+        unique: true,
+        auto: true
+    },
     userAdding: {
         type: String,
+        required: true
     },
     date: {
         type: Date,
@@ -11,6 +18,7 @@ const transactionSchema = new mongoose.Schema({
     },
     type: {
         type: String, 
+        required: true
     },
     pupil: {
         type: String,

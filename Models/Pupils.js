@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const pupilSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
   instructor: {
     type: String,
   },
@@ -19,9 +24,13 @@ const pupilSchema = new mongoose.Schema({
   },
   username: {
     type: String,
+    unique: true,
+    required: true,
   },
   password: {
     type: String,
+    required: true,
+    bcrypt: true,
   },
   dob: {
     type: String,
@@ -34,6 +43,8 @@ const pupilSchema = new mongoose.Schema({
   },
   email: {
     type: String,
+    unique: true,
+    required: true,
   },
   mobile: {
     type: Number,
@@ -79,12 +90,15 @@ const pupilSchema = new mongoose.Schema({
   },
   receiveSystemMessages: {
     type: Boolean,
+    default: false,
   },
   receiveBookingEmail: {
     type: Boolean,
+    default: false,
   },
   receiveBookingSms: {
     type: Boolean,
+    default: false,
   },
   pupilNotes: {
     type: String,
@@ -96,6 +110,13 @@ const pupilSchema = new mongoose.Schema({
 pupilSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 13);
+  }
+  next();
+});
+
+pupilSchema.pre("findOneAndUpdate", async function (next) {
+  if (this._update.password) {
+    this._update.password = await bcrypt.hash(this._update.password, 13);
   }
   next();
 });

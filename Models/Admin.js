@@ -53,5 +53,12 @@ adminSchema.pre("save", async function (next) {
   next();
 });
 
+adminSchema.pre("findOneAndUpdate", async function (next) {
+  if (this._update.password) {
+    this._update.password = await bcrypt.hash(this._update.password, 13);
+  }
+  next();
+});
+
 const Admin = new mongoose.model("Admin", adminSchema);
 module.exports = Admin;

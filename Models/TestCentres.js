@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const testCentresSchema = new mongoose.Schema({
     id: {
-        type: String,
+        type: Number,
         required: true,
-        unique: true
+        unique: true,
     },
     centreName: {
         type: String,

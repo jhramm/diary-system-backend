@@ -1,10 +1,15 @@
 const mongoose = require("mongoose");
 
 const clientInvoiceSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+    unique: true,
+    default: () => mongoose.Types.ObjectId().toHexString(),
+  },
   invoiceDate: {
     type: Date,
     default: Date.now,
-    required: true,
   },
   invoiceAmount: {
     type: Number,
