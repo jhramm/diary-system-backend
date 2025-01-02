@@ -5,6 +5,10 @@ const testCentresSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    address: {
+        type: String,
+        required: true
+    },
     postcodes: {
         type: String,
         required: true
@@ -12,7 +16,14 @@ const testCentresSchema = new mongoose.Schema({
     status: {
         type: Boolean,
         default: true
-    }
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
+    },
+    updated_at: {
+        type: Date
+    },
 });
 
 const TestCentresSchema = new mongoose.model("TestCentres", testCentresSchema);
