@@ -30,7 +30,7 @@ const instructorSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  username: {
+  userName: {
     type: String,
     unique: true,
     required: true,
