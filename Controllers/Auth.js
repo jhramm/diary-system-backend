@@ -34,7 +34,7 @@ const loginController = async (req, res) => {
         return res.status(404).send({ message: "Instructor not found" });
       }
     } else if (accountType === "client") {
-      const client = await Clients.findOne({ username: username });
+      const client = await Clients.findOne({ userName: username });
       if (client) {
         const matchPassword = await bcrypt.compare(password, client.password);
         if (matchPassword) {

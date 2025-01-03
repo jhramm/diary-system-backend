@@ -30,7 +30,7 @@ const operatorSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  userName: {
+  username: {
     type: String,
     unique: true,
     required: true,

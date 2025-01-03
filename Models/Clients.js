@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const clientSchema = new mongoose.Schema({
   id: {
     type: Number,
-    required: true,
     unique: true,
   },
   companyName: {
@@ -36,7 +35,7 @@ const clientSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  userName: {
+  username: {
     type: String,
     unique: true,
     required: true,
