@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const pupilSchema = new mongoose.Schema({
   id: {
     type: Number,
-    required: true,
     unique: true,
   },
   instructor: {
@@ -22,7 +21,7 @@ const pupilSchema = new mongoose.Schema({
   lastName: {
     type: String,
   },
-  userName: {
+  username: {
     type: String,
     unique: true,
     required: true,

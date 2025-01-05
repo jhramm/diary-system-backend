@@ -7,6 +7,6 @@ app.post("/", addPostcodes);
 app.get("/", getPostcodes);
 app.get("/:id", getPostcodeById);
 app.patch("/:id", updatePostcode);
-app.delete("/", deletePostcode);
+app.delete("/:id", deletePostcode);
 
 module.exports = app;

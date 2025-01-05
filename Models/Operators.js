@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const operatorSchema = new mongoose.Schema({
   id: {
     type: Number,
-    required: true,
     unique: true,
   },
   title: {
@@ -30,7 +29,7 @@ const operatorSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  userName: {
+  username: {
     type: String,
     unique: true,
     required: true,
