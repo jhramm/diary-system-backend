@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const instructorSchema = new mongoose.Schema({
   id: {
     type: Number,
-    unique: true,
+   
   },
   gender: {
     type: String,
