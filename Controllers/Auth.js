@@ -26,7 +26,7 @@ const loginController = async (req, res) => {
       if (instructor) {
         const matchPassword = await bcrypt.compare(password, instructor.password);
         if (matchPassword) {
-          return res.status(200).send({ message: "Logged in successfully" });
+          return res.status(200).send({ instructor });
         } else {
           return res.status(401).send({ message: "Incorrect password" });
         }
@@ -38,7 +38,7 @@ const loginController = async (req, res) => {
       if (client) {
         const matchPassword = await bcrypt.compare(password, client.password);
         if (matchPassword) {
-          return res.status(200).send({ message: "Logged in successfully" });
+          return res.status(200).send({ client });
         } else {
           return res.status(401).send({ message: "Incorrect password" });
         }
@@ -50,7 +50,7 @@ const loginController = async (req, res) => {
       if (operator) {
         const matchPassword = await bcrypt.compare(password, operator.password);
         if (matchPassword) {
-          return res.status(200).send({ message: "Logged in successfully" });
+          return res.status(200).send({ operator });
         } else {
           return res.status(401).send({ message: "Incorrect password" });
         }
